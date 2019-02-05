@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error</title>
+    <style>
+        body {
+            font-family: "Verdana", Arial, sans-serif;;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h3>List of configured IDPs</h3>
+    <hr/>
+
+    <div>
+        <div th:each="instance : ${idps}">
+            <span th:text="${instance.key}">Alias</span> <!-- - <span th:text="${instance.value}">Metadata</span> <br/> -->
+        </div>
+
+    </div>
+
+
+</div>
+</body>
+</html>
