@@ -8,19 +8,13 @@ This example is taken from the Spring Security SAML extension project.
 
 ### Modules
 
-##### Identity Provider
+#### Identity Provider
 
-It contains a basic identity provider application with the ability to define custom user attributes. This test IDP can be used to test any local SAML service provider implementation.
+- It contains a basic identity provider application with the ability to define custom user attributes. This test IDP can be used to test any local SAML service provider implementation.
 
-- It runs in http://localhost:8081/this-is-idp
+#### Service Provider
 
-
-##### Service Provider
-
-This is a basic service provider with custom IDP select page and a basic home page .
-
-- http://localhost:8082/this-is-sp
-
+- This is a basic service provider with custom IDP select page and a basic home page .
 
 ## How to Test
 
