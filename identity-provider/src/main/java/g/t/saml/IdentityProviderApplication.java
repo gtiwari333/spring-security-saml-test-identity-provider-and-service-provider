@@ -4,13 +4,14 @@ import g.t.saml.config.AppProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.core.env.Environment;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = JmxAutoConfiguration.class)
 @EnableConfigurationProperties({AppProperties.class})
 @Slf4j
 public class IdentityProviderApplication {

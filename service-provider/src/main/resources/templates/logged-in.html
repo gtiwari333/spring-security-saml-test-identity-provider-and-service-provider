@@ -5,28 +5,34 @@
 <head>
     <title>Logged In!</title>
     <meta charset="utf-8"/>
+    <style>
+        body {
+            font-family: "Verdana", Arial, sans-serif;;
+        }
+    </style>
 </head>
 
 
 <body>
 
-    <h1>Success!</h1>
 
-    <div>
-        <span>You are authenticated!</span>
-    </div>
+<a th:href="@{/idps}">View List of IDPs</a>
 
-    <hr/>
+<div>
+    <span>You are authenticated!</span>
+</div>
 
-    <div th:fragment="logout" sec:authorize="isAuthenticated()">
+<hr/>
 
-        <strong><span>User: </span><span sec:authentication="name"></span></strong>
+<div th:fragment="logout" sec:authorize="isAuthenticated()">
 
-        <form action="#" th:action="@{/saml/sp/logout}" method="post">
-            <input type="submit" value="Logout"/>
-        </form>
+    <strong><span>User: </span><span sec:authentication="name"></span></strong>
 
-    </div>
+    <form action="#" th:action="@{/saml/sp/logout}" method="post">
+        <input type="submit" value="Logout"/>
+    </form>
+
+</div>
 
 </body>
 
