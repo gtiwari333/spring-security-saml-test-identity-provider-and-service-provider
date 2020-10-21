@@ -65,6 +65,7 @@ saml2:
       - entity-id: my-service-provider-app
         metadata: http://localhost:8082/this-is-sp/saml/sp/metadata
         link-text: Test Service Provider Application
+        alias: local-sp1
       ## add new Service provider metadata here
 
 

@@ -69,4 +69,5 @@ saml2:
       - entity-id: my-identity-provider-app
         metadata: http://localhost:8081/this-is-idp/saml/idp/metadata
         link-text: Test Identity Provider Application
+        alias: local-sp1
       ## add new Identity provider metadata here

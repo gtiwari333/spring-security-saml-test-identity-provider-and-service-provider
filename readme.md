@@ -24,3 +24,7 @@ This example is taken from the Spring Security SAML extension project.
     
     - http://localhost:8082/this-is-sp
  
+## Look at UserUtils class to generate custom SAML attributes
+- Usernames: user002@email, user003@email
+- password: pass
+
