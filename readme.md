@@ -6,6 +6,8 @@ It supports both IDP initiated and SP initiated SSO flow.
 
 This example is taken from the Spring Security SAML extension project.
 
+### Requiremement: JDK 11 or JDK 17 (may not work with 17+)
+
 ### Modules
 
 #### Identity Provider
