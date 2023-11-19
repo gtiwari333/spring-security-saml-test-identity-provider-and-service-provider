@@ -9,34 +9,11 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.11</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
-
-
     <modules>
         <module>identity-provider</module>
         <module>service-provider</module>
     </modules>
 
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>11</java.version>
-        <spring-security-saml2-core.version>2.0.0.M31</spring-security-saml2-core.version>
-    </properties>
-
-
-    <repositories>
-        <repository>
-            <id>spring</id>
-            <name>Spring milestone repo</name>
-            <url>https://repo.spring.io/milestone/</url>
-        </repository>
-    </repositories>
 
 </project>
