@@ -6,10 +6,15 @@ server:
 spring:
   thymeleaf:
     cache: false
-
 logging:
   level:
-    root: INFO
+    root: TRACE
+    web: TRACE
+    'sun.rmi': ERROR
+    'org.apache.tomcat.util': ERROR
+    'java.io': ERROR
+    'org.opensaml.core': DEBUG
+    'org.apache.velocity': DEBUG
 
 saml2:
   network:

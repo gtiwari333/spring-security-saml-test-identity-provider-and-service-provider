@@ -12,6 +12,7 @@
     <modules>
         <module>identity-provider</module>
         <module>service-provider</module>
+        <module>service-provider-sb3</module>
     </modules>
 
 

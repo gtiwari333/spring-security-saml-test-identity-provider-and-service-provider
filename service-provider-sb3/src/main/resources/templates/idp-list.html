@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>List of IDPs</title>
+    <style>
+        body {
+            font-family: "Verdana", Arial, sans-serif;;
+        }
+    </style>
+</head>
+
+<body>
+
+<a th:href="@{/}">Home</a>
+
+<div class="container">
+    <h3>List of configured IDPs</h3>
+    <hr/>
+
+    <div>
+        <ul th:each="idp : ${idps}">
+            <li th:text="${idp}">Link Text</li>
+        </ul>
+
+    </div>
+
+
+</div>
+
+<hr/>
+
+<div th:fragment="logout" sec:authorize="isAuthenticated()">
+
+    <strong><span>User: </span><span sec:authentication="name"></span></strong>
+
+    <form action="#" th:action="@{/saml/sp/logout}" method="post">
+        <input type="submit" value="Logout"/>
+    </form>
+
+</div>
+
+</body>
+</html>

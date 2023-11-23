@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Logged In!</title>
+    <meta charset="utf-8"/>
+    <style>
+        body {
+            font-family: "Verdana", Arial, sans-serif;;
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+<a th:href="@{/idps}">View List of IDPs</a>
+
+<div>
+    <span>You are authenticated!</span>
+</div>
+
+<hr/>
+
+<div th:fragment="logout" sec:authorize="isAuthenticated()">
+
+    <strong><span>User: </span><span sec:authentication="name"></span></strong>
+
+    <form action="#" th:action="@{/saml/sp/logout}" method="post">
+        <input type="submit" value="Logout"/>
+    </form>
+
+</div>
+
+</body>
+
+</html>

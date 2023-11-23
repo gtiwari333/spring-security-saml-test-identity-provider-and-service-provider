@@ -5,7 +5,13 @@ server:
 
 logging:
   level:
-    root: INFO
+    root: TRACE
+    web: TRACE
+    'sun.rmi': ERROR
+    'org.apache.tomcat.util': ERROR
+    'java.io': ERROR
+    'org.opensaml.core': DEBUG
+    'org.apache.velocity': DEBUG
 
 saml2:
   identity-provider:
@@ -66,6 +72,11 @@ saml2:
         metadata: http://localhost:8082/this-is-sp/saml/sp/metadata
         link-text: Test Service Provider Application
         alias: local-sp1
+
+      - entity-id: second-service-provider
+        metadata: http://localhost:8083/this-is-sp2/saml/metadata
+        link-text: Test Service Provider Application 2
+        alias: local-sp2
       ## add new Service provider metadata here
 
 
