@@ -6,6 +6,9 @@ server:
 spring:
   thymeleaf:
     cache: false
+  mvc:
+    log-request-details: true
+    log-resolved-exception: true
 logging:
   level:
     root: TRACE

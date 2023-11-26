@@ -2,6 +2,7 @@ package g.t.saml.web;
 
 //import g.t.saml.config.AppProperties;
 
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.security.saml2.Saml2RelyingPartyProperties;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.Map;
@@ -47,6 +49,13 @@ public class ServiceProviderController {
         return "logout-response";
     }
 
+    @RequestMapping(value = {"/saml/sp/logout"})
+    public String logoutHandle(HttpServletRequest req) {
+        System.out.println(req.getParameter("RelayState"));
+        log.info("Logged out");
+        return "redirect:/saml/sp/select";
+    }
+
     @RequestMapping(value = {"/saml/sp/select"})
     public String selectIdp() {
         log.info("Selecting idp to login");
@@ -56,6 +65,6 @@ public class ServiceProviderController {
         return "select-provider";
     }
 
-      record Provider(String linkText, String redirect) {
+    record Provider(String linkText, String redirect) {
     }
 }

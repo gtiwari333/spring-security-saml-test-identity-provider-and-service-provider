@@ -8,6 +8,9 @@ server:
 spring:
   thymeleaf:
     cache: false
+  mvc:
+    log-request-details: true
+    log-resolved-exception: true
 #  security:
 #    saml2:
 #      relyingparty:
@@ -32,7 +35,12 @@ logging:
     root: TRACE
     web: TRACE
     'sun.rmi': ERROR
-    'org.apache.tomcat.util': ERROR
+    'javax.management': ERROR
+    'org.apache': ERROR
     'java.io': ERROR
-    'org.opensaml.core': DEBUG
-    'org.apache.velocity': DEBUG
+    'org.opensaml.core': INFO
+    'org.opensaml.xmlsec': INFO
+    'org.opensaml.saml.saml2': WARN
+    'org.thymeleaf': WARN
+    'org.springframework.beans': WARN
+    'rg.springframework.security.web.authentication': WARN
