@@ -1,0 +1,49 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /this-is-sp2
+  error:
+    include-exception: true
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: always
+
+spring:
+  thymeleaf:
+    cache: false
+  mvc:
+    log-request-details: true
+    log-resolved-exception: true
+#  security:
+#    saml2:
+#      relyingparty:
+#        registration:
+#          one:
+#            signing:
+#              - credentials:
+#                  certificate-location: classpath:credentials/sp-certificate.crt
+#                  private-key-location: classpath:credentials/sp-private.key
+#            assertingparty: # this is IDP
+#              entity-id: my-identity-provider-app
+#              metadata-uri: http://localhost:8081/this-is-idp/saml/idp/metadata
+#            singlelogout:
+#              binding: POST
+#              url: "{baseUrl}/saml/logout"
+#              responseUrl: "{baseUrl}/saml/SingleLogout"
+#            acs:
+#              location: "{baseUrl}/saml/SSO"
+
+logging:
+  level:
+    root: DEBUG
+    web: TRACE
+    'sun.rmi': ERROR
+    'org.apache': ERROR
+    'java.io': ERROR
+    'jdk.event': ERROR
+    'javax.management': ERROR
+    'org.opensaml': INFO
+    'org.springframework.security.saml2': TRACE
+    'org.thymeleaf': WARN
+    'org.springframework.beans': WARN
+    'rg.springframework.security.web.authentication': WARN

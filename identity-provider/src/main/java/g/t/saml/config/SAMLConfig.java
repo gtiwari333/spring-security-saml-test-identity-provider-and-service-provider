@@ -1,19 +1,26 @@
 package g.t.saml.config;
 
-import g.t.saml.filters.CustomIDPAuthenticationRequestFilter;
 import g.t.saml.filters.CustomIDPInitiatedLoginFilter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.saml.provider.SamlServerConfiguration;
+import org.springframework.security.saml.provider.identity.IdpAuthenticationRequestFilter;
 import org.springframework.security.saml.provider.identity.config.SamlIdentityProviderServerBeanConfiguration;
 
 import javax.servlet.Filter;
 import java.util.Collection;
 
+/**
+ * SamlIdentityProviderServerBeanConfiguration is servlet Filter based api.
+ */
 @Configuration
+@Slf4j
 public class SAMLConfig extends SamlIdentityProviderServerBeanConfiguration {
+
+
     private final AppProperties config;
 
     public SAMLConfig(@Qualifier("appProperties") AppProperties config) {
@@ -39,6 +46,6 @@ public class SAMLConfig extends SamlIdentityProviderServerBeanConfiguration {
 
     @Bean
     public Filter idpAuthnRequestFilter() {
-        return new CustomIDPAuthenticationRequestFilter(getSamlProvisioning(), samlAssertionStore());
+        return new IdpAuthenticationRequestFilter(getSamlProvisioning(), samlAssertionStore());
     }
 }

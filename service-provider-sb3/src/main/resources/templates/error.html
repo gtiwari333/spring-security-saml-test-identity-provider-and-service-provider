@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+
+<div class="container">
+
+    <div>
+        <br/>
+        <p th:utext="${path}"></p>
+        <p th:utext="${error}"></p>
+        <p th:utext="${status}"></p>
+        <p th:utext="${stackTrace}"></p>
+        <p th:utext="${message}"></p>
+
+        <br/>
+        <a th:href="@{/}">Back to Home Page</a>
+    </div>
+
+
+</div>
+
+</body>
+</html>

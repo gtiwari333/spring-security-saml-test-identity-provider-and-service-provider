@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Identity Provider Select Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        body {
+            font-family: "Verdana", Arial, sans-serif;;
+        }
+    </style>
+</head>
+<body>
+<!-- render application specific content here-->
+
+<h3>Welcome to the service provider application 2.<br/>
+    Please select an IDP below to authenticate and access this service.</h3>
+<h3></h3>
+<ul th:each="prov : ${idps}">
+    <li>
+        <a th:text="${prov.linkText}" th:href="@{${prov.redirect}}"></a>
+    </li>
+</ul>
+
+</body>
+</html>
