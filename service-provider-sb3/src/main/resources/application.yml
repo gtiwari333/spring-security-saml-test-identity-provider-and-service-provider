@@ -2,8 +2,11 @@ server:
   port: 8083
   servlet:
     context-path: /this-is-sp2
-
-
+  error:
+    include-exception: true
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: always
 
 spring:
   thymeleaf:
@@ -32,15 +35,15 @@ spring:
 
 logging:
   level:
-    root: TRACE
+    root: DEBUG
     web: TRACE
     'sun.rmi': ERROR
-    'javax.management': ERROR
     'org.apache': ERROR
     'java.io': ERROR
-    'org.opensaml.core': INFO
-    'org.opensaml.xmlsec': INFO
-    'org.opensaml.saml.saml2': WARN
+    'jdk.event': ERROR
+    'javax.management': ERROR
+    'org.opensaml': INFO
+    'org.springframework.security.saml2': TRACE
     'org.thymeleaf': WARN
     'org.springframework.beans': WARN
     'rg.springframework.security.web.authentication': WARN

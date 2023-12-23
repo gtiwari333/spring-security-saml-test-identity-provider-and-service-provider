@@ -9,15 +9,26 @@ spring:
   mvc:
     log-request-details: true
     log-resolved-exception: true
+  error:
+    include-exception: true
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: always
+
 logging:
   level:
-    root: TRACE
-    web: TRACE
+    root: DEBUG
+    web: DEBUG
     'sun.rmi': ERROR
-    'org.apache.tomcat.util': ERROR
+    'org.apache': WARN
     'java.io': ERROR
-    'org.opensaml.core': DEBUG
-    'org.apache.velocity': DEBUG
+    'jdk.event': ERROR
+    'javax.management': ERROR
+    'org.opensaml': INFO
+    'org.springframework.security': DEBUG
+    'org.springframework.beans': INFO
+    'org.springframework.boot': INFO
+
 
 saml2:
   network:

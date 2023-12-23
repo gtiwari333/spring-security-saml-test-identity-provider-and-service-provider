@@ -12,13 +12,21 @@ This example is taken from the Spring Security SAML extension project.
 ### Modules
 
 #### Identity Provider
-
+- Uses Spring Boot 2 identity provider (https://github.com/spring-attic/spring-security-saml/tree/develop-3.0)
 - It contains a basic identity provider application with the ability to define custom user attributes. This test IDP can
   be used to test any local SAML service provider implementation.
+- Requires JDK11
 
 #### Service Provider
-
+- Uses Spring Boot 2 service provider (https://github.com/spring-attic/spring-security-saml/tree/develop-3.0)
 - This is a basic service provider with custom IDP select page and a basic home page .
+- Requires JDK11
+
+#### Service Provider SB3
+- Uses Spring Boot 3 service provider with spring-security-saml2 
+-  https://docs.spring.io/spring-security/reference/servlet/saml2/login/overview.html#servlet-saml2login-minimaldependencies
+- This is a basic service provider with custom IDP select page and a basic home page .
+- Requires JDK17+
 
 ## How to Test
 
@@ -29,6 +37,8 @@ This example is taken from the Spring Security SAML extension project.
 
     - http://localhost:8082/this-is-sp
 
+    - http://localhost:8083/this-is-sp2
+ 
 ## Look at UserUtils class to generate custom SAML attributes
 
 - Usernames: user002@email, user003@email

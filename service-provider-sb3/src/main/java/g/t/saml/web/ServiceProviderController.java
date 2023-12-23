@@ -40,8 +40,10 @@ public class ServiceProviderController {
     }
 
     @RequestMapping(value = {"/", "/index", "/logged-in"})
-    public String home(@AuthenticationPrincipal Saml2AuthenticatedPrincipal principal) {
-        log.info("Sample SP Application - You are logged in!");
+    public String home(@AuthenticationPrincipal Saml2AuthenticatedPrincipal principal, HttpServletRequest req) {
+        //TODO: somehow the attributes and relayParameter is not coming along
+        log.info("Got Relay State {}", req.getParameter("RelayState"));
+        log.info("Sample SP Application - You are logged in!, attributes: {}", principal.getAttributes());
         return "logged-in";
     }
 
@@ -53,7 +55,7 @@ public class ServiceProviderController {
 
     @RequestMapping(value = {"/saml/sp/logout"})
     public String logoutHandle(HttpServletRequest req) {
-        System.out.println(req.getParameter("RelayState"));
+        log.info("Got Relay State {}", req.getParameter("RelayState"));
         log.info("Logged out");
         return "redirect:/saml/sp/select";
     }

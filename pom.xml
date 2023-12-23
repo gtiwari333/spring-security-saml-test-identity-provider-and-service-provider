@@ -10,8 +10,11 @@
     <packaging>pom</packaging>
 
     <modules>
+        <!-- these two require JDK 11 -->
         <module>identity-provider</module>
         <module>service-provider</module>
+
+        <!-- this requires JDK 17 + -->
         <module>service-provider-sb3</module>
     </modules>
 
