@@ -1,13 +1,6 @@
 ## Spring Security SAML example
 
-This project demonstrates use case of Identity Provider and Service Provider based on Spring SAML extension (version
-2.0.0.M30+).
-
-It supports both IDP initiated and SP initiated SSO flow.
-
-This example is taken from the Spring Security SAML extension project.
-
-### Requiremement: JDK 11 or JDK 17 (may not work with 17+)
+This project demonstrates both IDP initiated and SP initiated SSO flows.
 
 ### Modules
 
