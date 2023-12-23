@@ -1,16 +1,13 @@
 package g.t.saml.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository;
 import org.springframework.security.saml2.provider.service.web.authentication.OpenSaml4AuthenticationRequestResolver;
 import org.springframework.security.saml2.provider.service.web.authentication.Saml2AuthenticationRequestResolver;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-
-import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration(proxyBeanMethods = false)
 public class MySamlRelyingPartyConfiguration {
@@ -29,13 +26,18 @@ public class MySamlRelyingPartyConfiguration {
             "/saml/**",
     };
 
+    @Bean
+    Saml2AuthenticationRequestResolver resolver(RelyingPartyRegistrationRepository repo) {
+        return new OpenSaml4AuthenticationRequestResolver(repo);
+    }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http, Saml2AuthenticationRequestResolver samlAuthReqResolver) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http,
+                                                   Saml2AuthenticationRequestResolver samlAuthReqResolver) throws Exception {
         http.authorizeHttpRequests(ah -> ah
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .requestMatchers(AUTH_WHITELIST).permitAll()
-                .anyRequest().authenticated()); //this one will catch the rest patterns
+                .anyRequest().authenticated()); //this one will catch the rest of the patterns
 
         http.saml2Login(saml2 -> saml2.authenticationRequestResolver(samlAuthReqResolver));
 
