@@ -11,10 +11,12 @@
 </head>
 <body>
 <!-- render application specific content here-->
+<h3>Currently at Service Provider 2</h3>
+<br/>
 
-<h3>Welcome to the service provider application 2.<br/>
-    Please select an IDP below to authenticate and access this service.</h3>
-<h3></h3>
+<p>Welcome to the service provider application 2.<br/>
+    Please select an IDP(SP initiated login) below to authenticate and access this service.</p>
+
 <ul th:each="prov : ${idps}">
     <li>
         <a th:text="${prov.linkText}" th:href="@{${prov.redirect}}"></a>

@@ -18,7 +18,7 @@ public class ServiceProviderApplication {
         SpringApplication app = new SpringApplication(ServiceProviderApplication.class);
 
         Environment env = app.run(args).getEnvironment();
-        log.info("Service Provider: Access URLs:\n----------------------------------------------------------\n\t" +
+        log.info("Service Provider 1: Access URLs:\n----------------------------------------------------------\n\t" +
                         "Local: \t\t\thttp://localhost:{}{}\n" +
                         "----------------------------------------------------------",
                 env.getProperty("server.port"), env.getProperty("server.servlet.context-path")

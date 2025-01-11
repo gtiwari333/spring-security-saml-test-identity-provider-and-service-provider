@@ -10,12 +10,13 @@
     <packaging>pom</packaging>
 
     <modules>
-        <!-- these two require JDK 11 -->
+        <!-- these two require JDK 11, these can be loaded together in IDEA using the root pom.xml -->
         <module>identity-provider</module>
         <module>service-provider</module>
 
-        <!-- this requires JDK 17 + -->
-        <module>service-provider-sb3</module>
+        <!-- this requires JDK 17, load this folder as a separate maven project 
+        	- as configuring both jdk11 and jdk17 in same project is bit difficult in most IDEs -->
+        <!-- <module>service-provider-sb3</module> -->
     </modules>
 
 
