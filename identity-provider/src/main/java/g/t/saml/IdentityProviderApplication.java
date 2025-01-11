@@ -17,7 +17,7 @@ public class IdentityProviderApplication {
         SpringApplication app = new SpringApplication(IdentityProviderApplication.class);
 
         Environment env = app.run(args).getEnvironment();
-        log.info("Service Provider: Access URLs:\n----------------------------------------------------------\n\t" +
+        log.info("Identity Provider: Access URLs:\n----------------------------------------------------------\n\t" +
                         "Local: \t\t\thttp://localhost:{}{}\n" +
                         "----------------------------------------------------------",
                 env.getProperty("server.port"), env.getProperty("server.servlet.context-path")
