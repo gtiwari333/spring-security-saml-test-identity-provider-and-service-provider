@@ -23,7 +23,7 @@ This project demonstrates both IDP initiated and SP initiated SSO flows.
 
 ## How to Test
 
-- All module are Spring Boot applications. Run the applications and open either SP and IDP to initiate the
+- All module are Spring Boot applications. Run the applications (**Run IDP first**) and open either SP and IDP to initiate the
   authentication. Watch out for the redirection being performed by SAML.
 
     - http://localhost:8081/this-is-idp
